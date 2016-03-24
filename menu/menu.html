@@ -1,0 +1,31 @@
+<html>
+<head>
+<script src = "./index.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
+    <script>
+      $(document).ready(function(){
+        alert("here")
+		//var user,pass;
+        $("#Insert").click(function(){
+			alert("clicked")
+          //user=$("#user").val();
+          //pass=$("#password").val();
+		  //var newDoc = { "location" : { "city" : "test" }, "age" : 15, "items" : [ "test 1", "test 2", "test 3" ], "name" : "test Menu" };
+		  //var collec = "subjects";
+          $.post("http://localhost:3000/subjects",{"title": "Hello Anya", "text": "This will be the sample text"}, function(data){
+            if(data==='done')
+              {
+                alert("login success");
+              }
+          });
+        });
+      });
+    </script>
+</head>
+<body><h1>App Menu</h1>
+<br>
+<input type="button" id="Insert">
+
+
+
+</body></html>
